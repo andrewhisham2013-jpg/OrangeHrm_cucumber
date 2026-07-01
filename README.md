@@ -51,6 +51,38 @@ The suite delivers complete functional end-to-end BDD coverage across the follow
 *   **Media Capture:** Automated Video Recorder / Screen Capture Utility
 *   **Build Tool:** Maven
 
+
+🏃 Steps to Run Tests and Generate Allure Reports
+Prerequisites
+Before running, make sure your local workspace environment is ready:
+
+Ensure Java JDK (v17 or higher) is installed and configured.
+
+Ensure Maven is installed and mapped to your system environment variables.
+
+Install the Allure Command Line Tool to host and serve visual analytics locally.
+
+Step 1: Clean and Execute the Test Suite
+Open your preferred terminal profile at the root of the project directory and run the following Maven command to trigger test execution:
+Bash
+mvn clean test
+This command cleans previous build targets, launches the background browsers, runs your feature scenarios through TestNG, records execution videos, captures failure screenshots automatically, and outputs raw metrics into a local allure-results/ folder.
+
+Step 2: Access Video Recordings & Artifacts
+Screenshots: Captured dynamically on step failure and attached directly to the Allure Report step node.
+Video Playbacks: Saved locally in the configured recordings target folder (e.g., target/recordings/ or videos/), mapping precisely to your Cucumber scenario execution name for deep-dive playback analysis.
+
+Step 3: Generate and Open the Interactive Allure Report
+Once the execution completes, run the following command to process the raw output logs into a locally hosted web dashboard:
+Bash
+allure serve allure-results
+
+
+Step 4: Optional - Build a Hardened HTML Static Directory
+If you want to save a standalone, shareable dashboard folder (ideal for uploading to CI systems, GitHub Actions, or sending to teams), compile it statically:
+Bash
+allure generate allure-results --clean -o allure-report
+To view a previously generated static directory, execute: allure open allure-report
 ---
 
 ## 📂 Framework Directory Structure
@@ -84,34 +116,3 @@ OrangeHrm_cucumber/
 
 
 
-🏃 Steps to Run Tests and Generate Allure Reports
-Prerequisites
-Before running, make sure your local workspace environment is ready:
-
-Ensure Java JDK (v17 or higher) is installed and configured.
-
-Ensure Maven is installed and mapped to your system environment variables.
-
-Install the Allure Command Line Tool to host and serve visual analytics locally.
-
-Step 1: Clean and Execute the Test Suite
-Open your preferred terminal profile at the root of the project directory and run the following Maven command to trigger test execution:
-Bash
-mvn clean test
-This command cleans previous build targets, launches the background browsers, runs your feature scenarios through TestNG, records execution videos, captures failure screenshots automatically, and outputs raw metrics into a local allure-results/ folder.
-
-Step 2: Access Video Recordings & Artifacts
-Screenshots: Captured dynamically on step failure and attached directly to the Allure Report step node.
-Video Playbacks: Saved locally in the configured recordings target folder (e.g., target/recordings/ or videos/), mapping precisely to your Cucumber scenario execution name for deep-dive playback analysis.
-
-Step 3: Generate and Open the Interactive Allure Report
-Once the execution completes, run the following command to process the raw output logs into a locally hosted web dashboard:
-Bash
-allure serve allure-results
-
-
-Step 4: Optional - Build a Hardened HTML Static Directory
-If you want to save a standalone, shareable dashboard folder (ideal for uploading to CI systems, GitHub Actions, or sending to teams), compile it statically:
-Bash
-allure generate allure-results --clean -o allure-report
-To view a previously generated static directory, execute: allure open allure-report
