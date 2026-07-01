@@ -75,15 +75,13 @@ Video Playbacks: Saved locally in the configured recordings target folder (e.g.,
 Step 3: Generate and Open the Interactive Allure Report
 Once the execution completes, run the following command to process the raw output logs into a locally hosted web dashboard:
 Bash
-allure serve allure-results
+allure serve allure-results 
 
 
-Step 4: Optional - Build a Hardened HTML Static Directory
-If you want to save a standalone, shareable dashboard folder (ideal for uploading to CI systems, GitHub Actions, or sending to teams), compile it statically:
-Bash
-allure generate allure-results --clean -o allure-report
-To view a previously generated static directory, execute: allure open allure-report
 ---
+
+
+
 
 ## 📂 Framework Directory Structure
 
