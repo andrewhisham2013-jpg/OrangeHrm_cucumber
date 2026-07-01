@@ -1,0 +1,26 @@
+{
+  "employeeProfile.Verfication.VerficationTest.verifyEmployeePersonalInformationUpdateFlow": {
+    "epic": "Employee Management",
+    "feature": "Profile Information",
+    "story": "Personal Info Update & Verification",
+    "owner": "Andrew Hisham",
+    "description": "Validates employee info entry changes and administrative PIM validation verification flow.",
+    "jira": "https://jira.com/browse/PIM-101"
+  },
+  "employeeProfile.Login.LoginEmployeeUpdateTest.verifyEmployeePersonalInformationUpdateFlow": {
+    "epic": "Authentication Modules",
+    "feature": "Employee Login",
+    "story": "Standard Login Flow",
+    "owner": "Andrew Hisham",
+    "description": "Verifies that an employee profile user credential set logs into the application platform cleanly.",
+    "jira": "https://jira.com/browse/PIM-102"
+  },
+  "employeeReports.Validation.ValidationTest.validateCustomEmployeeReport": {
+    "epic": "Reporting Engines",
+    "feature": "Custom PIM Reports",
+    "story": "Generate Custom Profile Reports",
+    "owner": "Andrew Hisham",
+    "description": "Creates a specified data field profile selection report structure and validates output structural accuracy header tokens.",
+    "jira": "https://jira.com/browse/REP-201"
+  }
+}
